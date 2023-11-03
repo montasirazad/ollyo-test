@@ -1,6 +1,8 @@
 import { useRef, useState } from 'react';
 import './App.css';
 import { mainData } from './Data/dataMain';
+import Card from './Components/Card/Card';
+import Header from './Components/Header/Header';
 
 
 
@@ -11,17 +13,20 @@ function App() {
   const [cart, setCart] = useState([]);
 
   let dragItem = useRef();
-  let dragOverItem = useRef()
+  let dragOverItem = useRef();
 
+  /**Start drag function for controlling the starting of dragging process of the element*/
   const startDrag = (index) => {
-    dragItem.current = index
-    //console.log(dragItem);
+    dragItem.current = index;           /**storing the value of index for dragged element */
   };
 
+  /**Enter drag function for controlling the dragging process of the element*/
   const dragEnter = (index) => {
-    dragOverItem.current = index;
+    dragOverItem.current = index;      /**storing the value of index for moved element */
 
-  }
+  };
+
+  /**Handle drag end function for controlling end of dragging of the element*/
   const handleDragEnd = () => {
     const copiedArray = [...allData];
     const dragItemContent = copiedArray[dragItem.current];
@@ -30,13 +35,12 @@ function App() {
     dragItem.current = null;
     dragOverItem.current = null;
     setAllData(copiedArray)
-    //console.log('drag item content', dragItemContent);
-  }
+  };
 
 
 
 
-  const handleCheck = (e) => {
+  const handleCheck = (e) => {                   /**Function for handle check box   */
     const isChecked = e.target.checked;
     const itemId = e.target.value;
     if (isChecked) {
@@ -57,33 +61,25 @@ function App() {
     <div className='App'>
       <h3>Hello</h3>
 
-      {cart.length ? <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
-        <h2>item added:{cart.length}</h2>
-        <button onClick={() => { window.location.reload() }}>Delete items</button>
-      </div> : null}
+      {
+        cart.length ?
+          <Header cart={cart} />
+          : null
+      }
 
       <div style={{ display: 'flex', flexWrap: 'wrap', transition: 'all 1s ease-in-out' }}>
 
         {
           allData.map((data, index) =>
-          (
-            <div
-              ref={dragOverItem}
-              style={index === 0 ? { width: '180px', flexGrow: '3', height: '180px', border: '1px solid green', margin: '10px', cursor: 'move', transition: 'all .2s ease-in-out' } :
-                { width: '80px', height: '80px', border: '1px solid red', margin: '10px', cursor: 'move', transition: 'all .2s ease-in-out' }
-              }
-              key={data.id}
-              draggable
-
-              onDragStart={() => startDrag(index)}
-              onDragEnter={() => dragEnter(index)}
-              onDragEnd={() => handleDragEnd()}
-            >
-              <label style={{ cursor: 'pointer' }}>
-                <input type="checkbox" name="" id="" value={data.id} onClick={(e) => handleCheck(e, data)} />Select
-              </label>
-              <img src={data.image} alt="" style={index === 0 ? { width: '140px', height: '140px' } : { width: '50px', height: '50px' }} />
-            </div>)
+          (<Card
+            key={data.id}
+            data={data}
+            index={index}
+            startDrag={startDrag}
+            dragEnter={dragEnter}
+            handleDragEnd={handleDragEnd}
+            handleCheck={handleCheck}
+          />)
           )
         }
       </div>
