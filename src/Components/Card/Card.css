@@ -1,0 +1,8 @@
+.card-container:hover {
+    background-color: lightgrey;
+    transition: 2s;
+}
+
+.card-container label {
+    cursor: pointer;
+}
