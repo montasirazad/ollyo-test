@@ -1,8 +1,50 @@
-.card-container:hover {
-    background-color: lightgrey;
-    transition: 2s;
+.card-container {
+    border: 1px solid #8ac9ee;
+    margin: 5px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 130px;
+    height: 130px;
+    cursor: grabbing;
+
 }
 
-.card-container label {
+.card-container img {
+    width: 50%;
+}
+
+.card-container:hover {
+    background-color: #b9cdda;
+    transition: .7s;
+    border: none;
+}
+
+.card-container label:hover {
     cursor: pointer;
+}
+
+.card-container-zero {
+    border: 1px solid #8ac9ee;
+    margin: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 300px;
+    height: 300px;
+    cursor: grabbing;
+}
+
+.card-container-zero:hover {
+    background-color: #b9cdda;
+    transition: .2s;
+    border: none;
+}
+
+.card-container-zero img {
+    width: 40%;
 }

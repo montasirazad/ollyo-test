@@ -1,8 +1,8 @@
 import { useRef, useState } from 'react';
 import './App.css';
-import { mainData } from './Data/dataMain';
 import Card from './Components/Card/Card';
 import Header from './Components/Header/Header';
+import { mainData } from './Data/dataMain';
 
 
 
@@ -12,8 +12,13 @@ function App() {
   const [allData, setAllData] = useState(mainData)
   const [cart, setCart] = useState([]);
 
+
   let dragItem = useRef();
   let dragOverItem = useRef();
+
+
+
+
 
   /**Start drag function for controlling the starting of dragging process of the element*/
   const startDrag = (index) => {
@@ -23,7 +28,7 @@ function App() {
   /**Enter drag function for controlling the dragging process of the element*/
   const dragEnter = (index) => {
     dragOverItem.current = index;      /**storing the value of index for moved element */
-
+    console.log(dragOverItem.current);
   };
 
   /**Handle drag end function for controlling end of dragging of the element*/
@@ -59,32 +64,37 @@ function App() {
 
   return (
     <div className='App'>
-      
+
+      <div style={{ padding: '5px',borderBottom:'1px dotted gray' ,borderTop:'1px dotted gray',margin:'5px'}}>
+        <h4>Gallery</h4>
+      </div>
 
       {
-        cart.length ?
-          <Header cart={cart} />
-          : null
+        cart.length ? <Header cart={cart} /> : null
       }
 
-      <div style={{ display: 'flex', flexWrap: 'wrap', transition: 'all 1s ease-in-out' }}>
+      <div className='app-container '>
+
 
         {
-          allData.map((data, index) =>
-          (<Card
-            key={data.id}
-            data={data}
-            index={index}
-            startDrag={startDrag}
-            dragEnter={dragEnter}
-            handleDragEnd={handleDragEnd}
-            handleCheck={handleCheck}
-          />)
-          )
+          allData.map((data, index) => (
+            <Card
+              key={data.id}
+              data={data}
+              index={index}
+              startDrag={startDrag}
+              dragEnter={dragEnter}
+              handleDragEnd={handleDragEnd}
+              handleCheck={handleCheck}
+            />
+          ))
         }
+
       </div>
     </div>
   );
 }
 
 export default App;
+
+
