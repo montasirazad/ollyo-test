@@ -1,16 +1,16 @@
 .header-container button {
     width: 150px;
     height: 30px;
-    background-color: cornflowerblue;
-    color: white;
-    border: 1px solid white;
+    background-color: white;
+    color: red;
+    border: 1px solid red;
     border-radius: 8px;
     cursor: pointer;
 }
 
 .header-container button:hover {
-    background-color: white;
-    border: 1px solid cornflowerblue;
-    color: cornflowerblue;
+    background-color: red;
+    border: 1px solid red;
+    color: white;
 
 }

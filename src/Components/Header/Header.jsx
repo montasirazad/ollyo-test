@@ -8,7 +8,7 @@ const Header = (props) => {
         className='header-container'
         style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
             <h5 style={{display:'flex',alignItems:'center',justifyContent:'center',color:'blue'}}> <input type="checkbox" defaultChecked />{cart.length} Files selected</h5>
-            <button onClick={() => { window.location.reload() }}>Delete items</button>
+            <button onClick={() => { window.location.reload() }}>Delete Files</button>
         </div>
     );
 };
