@@ -17,7 +17,8 @@
 }
 
 .card-container:hover {
-    background-color: #b9cdda;
+    background-color: lightgrey;
+    opacity: .6;
     transition: .5s;
     border: none;
 }
@@ -34,19 +35,22 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 300px;
-    height: 300px;
+    height:290px;
+    width: 290px;
     cursor: grabbing;
 }
 
 .card-container-zero:hover {
     background-color: lightgrey;
+    opacity: .6;
     transition: .5s;
     border: none;
-    opacity: .6;
-    cursor: pointer;
+    cursor: grabbing;
 }
 
+.card-container-zero label:hover {
+    cursor: pointer;
+}
 .card-container-zero img {
     width: 40%;
 }

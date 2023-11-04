@@ -52,7 +52,6 @@ function App() {
       const newArray = [...cart, itemId];
       setCart(newArray)
 
-      console.log(e.target.value);
     } if (!isChecked) {
       const updatedCart = cart.filter(item => item !== itemId)
       setCart(updatedCart)
