@@ -18,7 +18,7 @@
 
 .card-container:hover {
     background-color: #b9cdda;
-    transition: .7s;
+    transition: .5s;
     border: none;
 }
 
@@ -40,9 +40,11 @@
 }
 
 .card-container-zero:hover {
-    background-color: #b9cdda;
-    transition: .2s;
+    background-color: lightgrey;
+    transition: .5s;
     border: none;
+    opacity: .6;
+    cursor: pointer;
 }
 
 .card-container-zero img {

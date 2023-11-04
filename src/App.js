@@ -20,19 +20,19 @@ function App() {
 
 
 
-  /**Start drag function for controlling the starting of dragging process of the element*/
-  const startDrag = (index) => {
+
+  const startDrag = (index) => {        /**Start drag function for controlling the starting of dragging process of the element*/
     dragItem.current = index;           /**storing the value of index for dragged element */
   };
 
-  /**Enter drag function for controlling the dragging process of the element*/
-  const dragEnter = (index) => {
+
+  const dragEnter = (index) => {        /**Enter drag function for controlling the dragging process of the element*/
     dragOverItem.current = index;      /**storing the value of index for moved element */
-    console.log(dragOverItem.current);
+
   };
 
-  /**Handle drag end function for controlling end of dragging of the element*/
-  const handleDragEnd = () => {
+
+  const handleDragEnd = () => {       /**Handle drag end function for controlling end of dragging of the element*/
     const copiedArray = [...allData];
     const dragItemContent = copiedArray[dragItem.current];
     copiedArray.splice(dragItem.current, 1)
@@ -65,7 +65,7 @@ function App() {
   return (
     <div className='App'>
 
-      <div style={{ padding: '5px',borderBottom:'1px dotted gray' ,borderTop:'1px dotted gray',margin:'5px'}}>
+      <div style={{ padding: '5px', borderBottom: '1px dotted gray', borderTop: '1px dotted gray', margin: '5px' }}>
         <h4>Gallery</h4>
       </div>
 
