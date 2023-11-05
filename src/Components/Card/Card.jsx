@@ -17,8 +17,7 @@ const Card = (props) => {
             <label>
                 <input type="checkbox" name="" id="" value={data.id} onClick={(e) => handleCheck(e, data)} />Select
             </label>
-            <br /> <br />
-
+            <br /> 
             <img src={data.image} alt="" />
         </div>
     );
