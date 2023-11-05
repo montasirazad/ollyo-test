@@ -1,11 +1,9 @@
-
-
 .app-container {
   display: grid;
   grid-template-columns: repeat(6, auto);
   align-items: center;
   justify-content: center;
-
+  padding: 15px;
 
 
 
@@ -13,4 +11,13 @@
 
 .app-container>div:first-child {
   grid-area: 1 / 1 / span 2 / span 2;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .app-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
 }

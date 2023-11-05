@@ -7,7 +7,7 @@
     justify-content: center;
     flex-direction: column;
     width: 130px;
-    height: 130px;
+    height: 140px;
     cursor: grabbing;
 
 }
@@ -21,6 +21,7 @@
     opacity: .6;
     transition: .5s;
     border: none;
+
 }
 
 .card-container label:hover {
@@ -35,7 +36,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height:290px;
+    height: 300px;
     width: 290px;
     cursor: grabbing;
 }
@@ -51,6 +52,30 @@
 .card-container-zero label:hover {
     cursor: pointer;
 }
+
 .card-container-zero img {
     width: 40%;
+}
+
+@media only screen and (max-width: 768px) {
+    .card-container {
+
+        width: 100px;
+        height: 100px;
+    }
+
+    .card-container img {
+        width: 30%;
+    }
+
+    .card-container-zero {
+        height: 150px;
+        width: 150px;
+
+    }
+
+    .card-container-zero img {
+        width: 30%;
+    }
+
 }

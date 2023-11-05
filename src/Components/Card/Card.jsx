@@ -6,9 +6,8 @@ const Card = (props) => {
     const { data, index, startDrag, dragEnter, handleDragEnd, handleCheck } = props;
     return (
         <div
-            // className={`card-container`}
-            className={`${index === 0 ? 'card-container-zero' : 'card-container'}`}
 
+            className={`${index === 0 ? 'card-container-zero' : 'card-container'}`}
             draggable
             key={data.id}
             onDragStart={() => startDrag(index)}
@@ -18,8 +17,8 @@ const Card = (props) => {
             <label>
                 <input type="checkbox" name="" id="" value={data.id} onClick={(e) => handleCheck(e, data)} />Select
             </label>
-            <br />
-            {/* <img src={data.image} alt="" style={index === 0 ? cardZeroIndex : allCardStyle} /> */}
+            <br /> <br />
+
             <img src={data.image} alt="" />
         </div>
     );
